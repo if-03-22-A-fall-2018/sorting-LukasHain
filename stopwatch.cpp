@@ -10,3 +10,21 @@
  * <your description here>
  *-----------------------------------------------------------------------------
 */
+#include "stopwatch.h"
+#include "time.h"
+
+clock_t start, stop;
+
+void 	start_stopwatch ()
+{
+  start = clock();
+}
+void 	stop_stopwatch ()
+{
+  stop = clock();
+}
+float 	elapsed_time ()
+{
+  stop = clock();
+  return ((float) (stop - start)) /CLOCKS_PER_SEC;
+}
